@@ -8,8 +8,8 @@ namespace MvvmCross.Binding.Droid.Views
     [Register("mvvmcross.binding.droid.views.MvxSimpleListItemView")]
     public class MvxSimpleListItemView : MvxListItemView
     {
-        public MvxSimpleListItemView(Context context, IMvxLayoutInflaterHolder layoutInflaterHolder, 
-            object dataContext, ViewGroup parent, int templateId) 
+        public MvxSimpleListItemView(Context context, IMvxLayoutInflaterHolder layoutInflaterHolder,
+            object dataContext, ViewGroup parent, int templateId)
             : base(context, layoutInflaterHolder, dataContext, parent, templateId)
         {
         }
@@ -20,8 +20,7 @@ namespace MvvmCross.Binding.Droid.Views
             set
             {
                 var context = base.DataContext = value;
-                var textView = Content as TextView;
-                if (textView != null)
+                if (Content is TextView textView)
                     textView.Text = context?.ToString();
             }
         }

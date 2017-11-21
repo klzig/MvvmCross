@@ -118,7 +118,7 @@ namespace MvvmCross.Binding.Droid.Views
                   "Binding to IList is more efficient.");
 
             if (_itemsSource is INotifyCollectionChanged newObservable)
-                _subscription = newObservable?.WeakSubscribe(OnItemsSourceCollectionChanged);
+                _subscription = newObservable.WeakSubscribe(OnItemsSourceCollectionChanged);
 
             NotifyDataSetChanged();
         }
@@ -177,10 +177,10 @@ namespace MvvmCross.Binding.Droid.Views
             return position;
         }
 
-        public override View GetDropDownView(int position, View convertView, ViewGroup parent) 
+        public override View GetDropDownView(int position, View convertView, ViewGroup parent)
             => GetView(position, convertView, parent, DropDownItemTemplateId);
 
-        public override View GetView(int position, View convertView, ViewGroup parent) 
+        public override View GetView(int position, View convertView, ViewGroup parent)
             => GetView(position, convertView, parent, ItemTemplateId);
 
         protected virtual View GetView(int position, View convertView, ViewGroup parent, int templateId)
@@ -199,7 +199,7 @@ namespace MvvmCross.Binding.Droid.Views
         protected virtual View GetBindableView(
             View convertView, object dataContext, ViewGroup parent, int templateId)
         {
-            IMvxListItemView viewToUse = null;
+            IMvxListItemView viewToUse;
 
             // we have a templateid lets use bind and inflate on it :)
             if (convertView?.Tag is IMvxListItemView item &&
@@ -239,17 +239,17 @@ namespace MvvmCross.Binding.Droid.Views
 
     public class MvxAdapter<TItem> : MvxAdapter where TItem : class
     {
-        public MvxAdapter(Context context) 
+        public MvxAdapter(Context context)
             : base(context, MvxAndroidBindingContextHelpers.Current())
         {
         }
 
-        public MvxAdapter(Context context, IMvxAndroidBindingContext bindingContext) 
+        public MvxAdapter(Context context, IMvxAndroidBindingContext bindingContext)
             : base(context, bindingContext)
         {
         }
 
-        public MvxAdapter(IntPtr javaReference, JniHandleOwnership transfer) 
+        public MvxAdapter(IntPtr javaReference, JniHandleOwnership transfer)
             : base(javaReference, transfer)
         {
         }

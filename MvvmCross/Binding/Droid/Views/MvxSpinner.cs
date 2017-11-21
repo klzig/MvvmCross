@@ -1,4 +1,4 @@
-﻿// MvxSpinner.cs
+// MvxSpinner.cs
 
 // MvvmCross is licensed using Microsoft Public License (Ms-PL)
 // Contributions and inspirations noted in readme.md and license.txt
@@ -52,10 +52,7 @@ namespace MvvmCross.Binding.Droid.Views
 
         public new IMvxAdapter Adapter
         {
-            get
-            {
-                return base.Adapter as IMvxAdapter;
-            }
+            get => base.Adapter as IMvxAdapter;
             set
             {
                 var existing = Adapter;
@@ -79,20 +76,20 @@ namespace MvvmCross.Binding.Droid.Views
         [MvxSetToNullAfterBinding]
         public IEnumerable ItemsSource
         {
-            get { return Adapter.ItemsSource; }
-            set { Adapter.ItemsSource = value; }
+            get => Adapter.ItemsSource;
+            set => Adapter.ItemsSource = value;
         }
 
         public int ItemTemplateId
         {
-            get { return Adapter.ItemTemplateId; }
-            set { Adapter.ItemTemplateId = value; }
+            get => Adapter.ItemTemplateId;
+            set => Adapter.ItemTemplateId = value;
         }
 
         public int DropDownItemTemplateId
         {
-            get { return Adapter.DropDownItemTemplateId; }
-            set { Adapter.DropDownItemTemplateId = value; }
+            get => Adapter.DropDownItemTemplateId;
+            set => Adapter.DropDownItemTemplateId = value;
         }
 
         public ICommand HandleItemSelected { get; set; }
