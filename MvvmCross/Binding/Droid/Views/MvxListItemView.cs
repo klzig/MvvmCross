@@ -1,4 +1,4 @@
-﻿// MvxListItemView.cs
+// MvxListItemView.cs
 
 // MvvmCross is licensed using Microsoft Public License (Ms-PL)
 // Contributions and inspirations noted in readme.md and license.txt
@@ -16,16 +16,16 @@ using Object = Java.Lang.Object;
 namespace MvvmCross.Binding.Droid.Views
 {
     [Register("mvvmcross.binding.droid.views.MvxListItemView")]
-    public class MvxListItemView : Object, IMvxListItemView, 
+    public class MvxListItemView : Object, IMvxListItemView,
         IMvxBindingContextOwner, View.IOnAttachStateChangeListener
     {
         private readonly IMvxAndroidBindingContext _bindingContext;
         private View _content;
-		private object _cachedDataContext;
-		private bool _isAttachedToWindow;
+        private object _cachedDataContext;
+        private bool _isAttachedToWindow;
 
         public MvxListItemView(Context context,
-            IMvxLayoutInflaterHolder layoutInflaterHolder, object dataContext, 
+            IMvxLayoutInflaterHolder layoutInflaterHolder, object dataContext,
             ViewGroup parent, int templateId)
         {
             _bindingContext = new MvxAndroidBindingContext(context, layoutInflaterHolder, dataContext);
@@ -50,7 +50,7 @@ namespace MvvmCross.Binding.Droid.Views
 
         public IMvxBindingContext BindingContext
         {
-            get => _bindingContext; 
+            get => _bindingContext;
             set => throw new NotImplementedException("BindingContext is readonly in the list item");
         }
 

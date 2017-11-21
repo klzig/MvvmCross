@@ -1,4 +1,4 @@
-﻿// MvxListView.cs
+// MvxListView.cs
 
 // MvvmCross is licensed using Microsoft Public License (Ms-PL)
 // Contributions and inspirations noted in readme.md and license.txt
@@ -64,7 +64,7 @@ namespace MvvmCross.Binding.Droid.Views
                     value.ItemTemplateId = existing.ItemTemplateId;
                     value.ItemsSource = existing.ItemsSource;
                 }
-                
+
                 base.Adapter = value;
 
                 if (existing != null)
@@ -75,7 +75,7 @@ namespace MvvmCross.Binding.Droid.Views
         [MvxSetToNullAfterBinding]
         public IEnumerable ItemsSource
         {
-            get => Adapter.ItemsSource; 
+            get => Adapter.ItemsSource;
             set => Adapter.ItemsSource = value;
         }
 
@@ -92,7 +92,7 @@ namespace MvvmCross.Binding.Droid.Views
             {
                 _itemClick = value;
                 if (_itemClick != null)
-                    EnsureItemClickOverloaded(); 
+                    EnsureItemClickOverloaded();
             }
         }
 

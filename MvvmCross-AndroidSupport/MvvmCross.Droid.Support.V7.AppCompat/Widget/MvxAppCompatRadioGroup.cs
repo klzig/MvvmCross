@@ -1,4 +1,4 @@
-﻿// MvxAppCompatRadioGroup.cs
+// MvxAppCompatRadioGroup.cs
 
 // MvvmCross is licensed using Microsoft Public License (Ms-PL)
 // Contributions and inspirations noted in readme.md and license.txt
@@ -55,9 +55,8 @@ namespace MvvmCross.Droid.Support.V7.AppCompat.Widget
 
         private void OnChildViewAdded(object sender, ChildViewAddedEventArgs args)
         {
-            //var li = (args.Child as MvxListItemView);
             var radioButton = args.Child as AppCompatRadioButton;
-            
+
             // radio buttons require an id so that they get un-checked correctly
             if (radioButton?.Id == NoId)
             {

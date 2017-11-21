@@ -1,4 +1,4 @@
-﻿// MvxAdapter.cs
+// MvxAdapter.cs
 
 // MvvmCross is licensed using Microsoft Public License (Ms-PL)
 // Contributions and inspirations noted in readme.md and license.txt
@@ -25,17 +25,17 @@ using Object = Java.Lang.Object;
 
 namespace MvvmCross.Binding.Droid.Views
 {
-	public class MvxAdapter
+    public class MvxAdapter
         : BaseAdapter
         , IMvxAdapter
-	{
-	    private static int[] SimpleItemTemplateIds { get; } =
-	    {
-	        Android.Resource.Layout.SimpleListItem1,
-	        Android.Resource.Layout.SimpleSpinnerItem
-	    };
+    {
+        private static int[] SimpleItemTemplateIds { get; } =
+        {
+            Android.Resource.Layout.SimpleListItem1,
+            Android.Resource.Layout.SimpleSpinnerItem
+        };
 
-	    private int _itemTemplateId = Android.Resource.Layout.SimpleListItem1;
+        private int _itemTemplateId = Android.Resource.Layout.SimpleListItem1;
         private int _dropDownItemTemplateId = Android.Resource.Layout.SimpleSpinnerDropDownItem;
         private IEnumerable _itemsSource;
         private IDisposable _subscription;
@@ -119,7 +119,7 @@ namespace MvvmCross.Binding.Droid.Views
 
             if (_itemsSource is INotifyCollectionChanged newObservable)
                 _subscription = newObservable?.WeakSubscribe(OnItemsSourceCollectionChanged);
-            
+
             NotifyDataSetChanged();
         }
 
@@ -193,7 +193,7 @@ namespace MvvmCross.Binding.Droid.Views
 
             var source = GetRawItem(position);
 
-			return GetBindableView(convertView, source, parent, templateId);
+            return GetBindableView(convertView, source, parent, templateId);
         }
 
         protected virtual View GetBindableView(
@@ -212,7 +212,7 @@ namespace MvvmCross.Binding.Droid.Views
                 viewToUse = CreateBindableView(dataContext, parent, templateId);
                 viewToUse.Content.Tag = viewToUse as Object;
             }
-                
+
             BindBindableView(dataContext, viewToUse);
 
             return viewToUse.Content;// as View;
@@ -237,28 +237,28 @@ namespace MvvmCross.Binding.Droid.Views
         }
     }
 
-	public class MvxAdapter<TItem> : MvxAdapter where TItem : class
-	{
-		public MvxAdapter(Context context) 
+    public class MvxAdapter<TItem> : MvxAdapter where TItem : class
+    {
+        public MvxAdapter(Context context) 
             : base(context, MvxAndroidBindingContextHelpers.Current())
-		{
-		}
+        {
+        }
 
-		public MvxAdapter(Context context, IMvxAndroidBindingContext bindingContext) 
+        public MvxAdapter(Context context, IMvxAndroidBindingContext bindingContext) 
             : base(context, bindingContext)
-		{
-		}
+        {
+        }
 
-		public MvxAdapter(IntPtr javaReference, JniHandleOwnership transfer) 
+        public MvxAdapter(IntPtr javaReference, JniHandleOwnership transfer) 
             : base(javaReference, transfer)
-		{
-		}
+        {
+        }
 
         [MvxSetToNullAfterBinding]
         public new IEnumerable<TItem> ItemsSource
-		{
-			get => base.ItemsSource as IEnumerable<TItem>;
-			set => base.ItemsSource = value;
-		}
-	}
+        {
+            get => base.ItemsSource as IEnumerable<TItem>;
+            set => base.ItemsSource = value;
+        }
+    }
 }
