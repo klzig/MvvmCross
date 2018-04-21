@@ -12,7 +12,7 @@ Please read the readme instructions carefully, and don't hesitate to jump in and
 
 ## .NET Standard
 
-MvvmCross 6 requires your app to use .NET Standard 2.0 as its base library now. Please make sure you make that upgrade before proceeding!
+MvvmCross 6 requires your app to use .NET Standard 2.0 as its base library now. Please make sure you make that upgrade before proceeding!  Note that this is a change in your core project, not a Nuget package.
 
 ## Names and namespaces changes
 
