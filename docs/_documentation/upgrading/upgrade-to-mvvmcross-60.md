@@ -12,7 +12,7 @@ Please read the readme instructions carefully, and don't hesitate to jump in and
 
 ## .NET Standard
 
-MvvmCross 6 requires your app to use .NET Standard 2.0 as its base library now. Please make sure you make that upgrade before proceeding!
+MvvmCross 6 requires your app to use .NET Standard 2.0 as its base library now, PCLs are not supported. Please make sure you upgrade before proceeding!  Upgrade tutorial [here.](https://channel9.msdn.com/Shows/XamarinShow/Snack-Pack-15-Upgrading-to-XamarinForms-to-NET-Standard?ocid=player)
 
 ## Names and namespaces changes
 
@@ -27,7 +27,7 @@ In the past we had a mix for extension methods between `Extensions` and `Extensi
 Previously we had a mix between `iOS` and `Ios` namespaces. We have unified them all to `Ios`.
 
 #### Android 
-As we now don't have separate projects for each platform's implementations, we got rid of the Xamarin limitation for naming android projects as "Android" (that's why the convention of `Droid` exists!). In summary, we have changed most namespaces that included `Droid` to `Android`.
+As we now don't have separate namespaces for each platform's implementations, we got rid of the Xamarin limitation for naming android projects as "Android" (that's why the convention of `Droid` exists!). In summary, we have changed most namespaces that included `Droid` to `Android`.
 
 #### tvOS
 Previously we had a mix between `tvOS` and `Tvos` namespaces. We have unified them all to `Tvos`.
