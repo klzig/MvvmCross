@@ -12,7 +12,7 @@ Please read the readme instructions carefully, and don't hesitate to jump in and
 
 ## .NET Standard
 
-MvvmCross 6 requires your app to use .NET Standard 2.0 as its base library now. Please make sure you make that upgrade before proceeding!
+MvvmCross 6 requires your app to use .NET Standard 2.0 as its base library now, PCLs are not supported. Please make sure you upgrade before proceeding!  Upgrade tutorial [here.](https://channel9.msdn.com/Shows/XamarinShow/Snack-Pack-15-Upgrading-to-XamarinForms-to-NET-Standard?ocid=player)
 
 ## Names and namespaces changes
 
